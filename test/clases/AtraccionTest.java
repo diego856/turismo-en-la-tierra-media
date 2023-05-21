@@ -10,5 +10,9 @@ public class AtraccionTest {
 	public void test() {
 		fail("Not yet implemented");
 	}
-
+	
+	@Test
+	public void PRTest() {
+		fail("Not yet implemented");
+	}
 }
