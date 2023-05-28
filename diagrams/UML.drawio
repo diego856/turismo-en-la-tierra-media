@@ -1,0 +1,46 @@
+<mxfile host="Electron" modified="2023-05-28T17:11:23.441Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="UzWKN6oS9_PoncauKtTY" version="21.2.8" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1195" dy="703" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-17" value="Usuario" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="144" y="40" width="540" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-18" value="- nombre : String&lt;br&gt;- preferencia : String&lt;br&gt;- dineroDisponible : double&lt;br&gt;- tiempoDisponible : float" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="nxIMyX0dU8XtXgx2l4wC-17">
+          <mxGeometry y="26" width="540" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="nxIMyX0dU8XtXgx2l4wC-17">
+          <mxGeometry y="100" width="540" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-20" value="+ Usuario (nombre : String, preferencia : String, dineroDisponible : double, tiempoDisponible : float)&lt;br&gt;+ getNombre () : String&lt;br&gt;+ getPreferencia () : String&lt;br&gt;+ getDineroDisponible () : double&lt;br&gt;+ getTiempoDisponible () : float&lt;br&gt;+ setNombre (nombre : String) : void&lt;br&gt;+ setPreferencia (preferencia : String) : void&lt;br&gt;+ setDineroDisponible (dineroDisponible : double) : void&lt;br&gt;+ setTiempoDisponible (tiempoDisponible : float) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="nxIMyX0dU8XtXgx2l4wC-17">
+          <mxGeometry y="108" width="540" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-21" value="Atraccion" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="143" y="320" width="542" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-22" value="- nombre : String&lt;br&gt;- costo : double&lt;br&gt;- duracion : float&lt;br&gt;- cupo: int&lt;br&gt;- tipo : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="nxIMyX0dU8XtXgx2l4wC-21">
+          <mxGeometry y="26" width="542" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="nxIMyX0dU8XtXgx2l4wC-21">
+          <mxGeometry y="110" width="542" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-24" value="+ Atraccion (nombre : String, costo: double, duracion: float, cupo: int , tipo : String)&lt;br&gt;+ getNombre () : String&lt;br&gt;+ getCosto() : double&lt;br&gt;+ getDuracion() : float&lt;br&gt;+ getCupo() : int&lt;br&gt;+ getTipo() : String&lt;br&gt;+ setNombre (nombre : String) : void&lt;br&gt;+ setCosto(costo : double) : void&lt;br&gt;+ setDuracion(duracion : float) : void&lt;br&gt;+ setCupo(cupo : int) : void&lt;br&gt;+ setTipo(tipo : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="nxIMyX0dU8XtXgx2l4wC-21">
+          <mxGeometry y="118" width="542" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-25" value="Promocion" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="143" y="630" width="542" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-26" value="- nombre : String&lt;br&gt;- tipo : String&lt;br&gt;- precio: double&lt;br&gt;- atracciones : Atraccion[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="nxIMyX0dU8XtXgx2l4wC-25">
+          <mxGeometry y="26" width="542" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-27" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="nxIMyX0dU8XtXgx2l4wC-25">
+          <mxGeometry y="90" width="542" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="nxIMyX0dU8XtXgx2l4wC-28" value="+ Promocion (nombre : String, tipo: String, precio: double, atracciones: Atraccion[])&lt;br&gt;+ getNombre () : String&lt;br&gt;+ getTipo() : String&lt;br&gt;+ getPrecio() : double&lt;br&gt;+ getAtracciones() : Atraccion[]&lt;br&gt;+ setNombre (nombre : String) : void&lt;br&gt;+ setTipo(tipo : String) : void&lt;br&gt;+ setPrecio(precio : double) : void&lt;br&gt;+ setAtracciones(atracciones : Persona[]) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="nxIMyX0dU8XtXgx2l4wC-25">
+          <mxGeometry y="98" width="542" height="142" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
