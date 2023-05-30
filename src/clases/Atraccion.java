@@ -19,6 +19,10 @@ public class Atraccion {
 		}
 
 	}
+	
+	public Atraccion() {
+		super();
+	}
 
 	public String getNombre() {
 		return nombre;
