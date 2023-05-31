@@ -1,8 +1,7 @@
 package clases;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-
+import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -39,29 +38,36 @@ public class PromocionTest {
 		// Arrange
 		Promocion promocion = new Promocion();
 		double costo = 15.5;
-		boolean testPassed = false;
+		boolean testOk = false;
 
 		// Act
 		promocion.setCosto(costo);
 
 		// Assert
 		if (costo == promocion.getCosto()){
-			testPassed = true;
+			testOk = true;
 		}
 		
-		Assert.assertEquals(testPassed, true);
+		Assert.assertEquals(testOk, true);
 	}
 	
 	@Test
-	// TODO: hacer test de atracciones cuando la clase atracciones este terminada
-	public void setAndGetAtracciones() {
+	public void setAndGetAtracciones() throws Exception {
 		// Arrange
+		Promocion promocion = new Promocion();
+		Atraccion moria = new Atraccion("Moria", 10, 2, 6, "Aventura");
+		Atraccion erebor = new Atraccion("Erebor", 12, 3, 32, "Paisajes");
+		ArrayList<Atraccion> atracciones = new ArrayList<>( Arrays. asList(moria, erebor));
+		boolean testOk = false;
 		
-
 		// Act
-		
+		promocion.setAtracciones(atracciones);
 
 		// Assert
+		if (promocion.getAtracciones().equals(atracciones) ) {
+			testOk = true;
+		}
 		
+		Assert.assertEquals(testOk, true);
 	}
 }
