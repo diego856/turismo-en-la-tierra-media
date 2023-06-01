@@ -3,10 +3,14 @@ package clases;
 public class Usuario {
     private String preferencia;
     private double dineroDisponible;
-    private int tiempoDisponible;
+    private float tiempoDisponible;
     private String nombre;
     
-    public Usuario(String preferencia, double dineroDisponible, int tiempoDisponible, String nombre) {
+    public Usuario() {
+    	super();
+    }
+    
+    public Usuario(String nombre, String preferencia,  double dineroDisponible, float tiempoDisponible) {
         this.preferencia = preferencia;
         this.dineroDisponible = dineroDisponible;
         this.tiempoDisponible = tiempoDisponible;
@@ -22,7 +26,7 @@ public class Usuario {
         return dineroDisponible;
     }
     
-    public int getTiempoDisponible() {
+    public float getTiempoDisponible() {
         return tiempoDisponible;
     }
     
@@ -39,7 +43,7 @@ public class Usuario {
         this.dineroDisponible = dineroDisponible;
     }
     
-    public void setTiempoDisponible(int tiempoDisponible) {
+    public void setTiempoDisponible(float tiempoDisponible) {
         this.tiempoDisponible = tiempoDisponible;
     }
     
