@@ -9,7 +9,7 @@ public class UsuarioTest {
 
     @Before
     public void setUp() {
-        usuario = new Usuario("Juan", 50, 100, "Preferencia1");
+        usuario = new Usuario("Juan", "Preferencia1", 100, 50);
     }
 
     @Test
@@ -28,11 +28,11 @@ public class UsuarioTest {
 
     @Test
     public void testGetTiempoDisponible() {
-    	Assert.assertEquals(50, usuario.getTiempoDisponible());
+    	Assert.assertEquals(50, usuario.getTiempoDisponible(), 0);
     }
     
     @Test
     public void testGetDineroDisponible() {
-    	Assert.assertEquals(50, usuario.getDineroDisponible(), 0);
+    	Assert.assertEquals(100, usuario.getDineroDisponible(), 0);
     }
 }

@@ -12,28 +12,37 @@ public class Archivo {
 		this.nombre = nombre;
 	}
 
-	// TODO: Descomentar cuando este terminada la clase Usuario
-	/*
-	 * public ArrayList<Usuario> leerPerfilesDeUsuarios() { Scanner lector = null;
-	 * ArrayList<Usuario> usuarios = new ArrayList<>(); try { lector =
-	 * abrirArchivo();
-	 * 
-	 * // Omitimos la linea de encabezados omitirLinea(lector);
-	 * 
-	 * while (lector.hasNextLine()) { String nextLine = lector.nextLine();
-	 * 
-	 * String[] perfilLeido = nextLine.split(",");
-	 * 
-	 * Usuario usuario = new Usuario(); usuario.setNombre(perfilLeido[0]);
-	 * usuario.setPreferencias(perfilLeido[1]);
-	 * usuario.setDineroDisponible(Double.parseDouble(perfilLeido[2]));
-	 * usuario.setTiempoDisponible(Float.parseFloat(perfilLeido[3]));
-	 * 
-	 * usuarios.add(usuario); } } catch (FileNotFoundException e) {
-	 * e.printStackTrace(); } finally { lector.close(); }
-	 * 
-	 * return usuarios; }
-	 */
+	public ArrayList<Usuario> leerPerfilesDeUsuarios() {
+		Scanner lector = null;
+		ArrayList<Usuario> usuarios = new ArrayList<>();
+		try {
+			lector = abrirArchivo();
+
+			// Omitimos la linea de encabezados 
+			omitirLinea(lector);
+
+			while (lector.hasNextLine()) {
+				String nextLine = lector.nextLine();
+
+				String[] perfilLeido = nextLine.split(",");
+
+				String nombre = perfilLeido[0];
+				String preferencias = perfilLeido[1];
+				double dineroDisponible = Double.parseDouble(perfilLeido[2]);
+				float tiempoDisponible = Float.parseFloat(perfilLeido[3]);
+
+				Usuario usuario = new Usuario(nombre, preferencias, dineroDisponible, tiempoDisponible);
+
+				usuarios.add(usuario);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			lector.close();
+		}
+
+		return usuarios;
+	}
 
 	public ArrayList<Atraccion> leerAtracciones() {
 		Scanner lector = null;

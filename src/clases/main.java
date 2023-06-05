@@ -10,6 +10,9 @@ public class main {
 		
 		archivo.setNombre("promociones");
 		ArrayList<Promocion> promociones = archivo.leerPromociones(atracciones);
+		
+		archivo.setNombre("perfiles-de-usuarios");
+		ArrayList<Usuario> usuarios = archivo.leerPerfilesDeUsuarios();
 
 		for (Promocion promocion : promociones) {
 			System.out.println("--------------------------");
@@ -19,6 +22,15 @@ public class main {
 			System.out.println(promocion.getAtracciones());
 			System.out.println("--------------------------");
 		}
+		
+		System.out.println("--------------------------");
+		
+		for (Usuario usuario : usuarios) {
+			System.out.println("--------------------------");
+			usuario.imprimirInformacion();
+			System.out.println("--------------------------");
+		}
+		
 	}
 
 }
