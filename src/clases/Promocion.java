@@ -3,13 +3,21 @@ package clases;
 import java.util.ArrayList;
 
 public class Promocion {
+
 	private String nombre;
 	private String tipo;
 	private double costo;
 	private ArrayList<Atraccion> atracciones;
-	
-	public Promocion() {
-		super();
+	private float duracion;
+	private boolean ofertada;
+
+	public Promocion(String nombre, String tipo, double costo, ArrayList<Atraccion> atracciones, float duracion) {
+		this.nombre = nombre;
+		this.tipo = tipo;
+		this.costo = costo;
+		this.atracciones = atracciones;
+		this.duracion = duracion;
+		this.ofertada = false;
 	}
 
 	public String getNombre() {
@@ -27,9 +35,21 @@ public class Promocion {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	
+	public void setOfertada(boolean ofertada) {
+		this.ofertada = ofertada;
+	}
 
 	public double getCosto() {
-		return costo;
+		return this.costo;
+	}
+	
+	public boolean getOfertada() {
+		return this.ofertada;
+	}
+	
+	public float getDuracion() {
+		return this.duracion;
 	}
 
 	public void setCosto(double costo) {

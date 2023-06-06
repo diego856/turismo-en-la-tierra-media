@@ -3,7 +3,15 @@ package clases;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import Usuarios.Usuario;
+import Usuarios.Aventurero;
+import Usuarios.Gloton;
+import Usuarios.Naturalista;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Archivo {
 	private String nombre;
@@ -18,7 +26,7 @@ public class Archivo {
 		try {
 			lector = abrirArchivo();
 
-			// Omitimos la linea de encabezados 
+			// Omitimos la linea de encabezados
 			omitirLinea(lector);
 
 			while (lector.hasNextLine()) {
@@ -31,9 +39,20 @@ public class Archivo {
 				double dineroDisponible = Double.parseDouble(perfilLeido[2]);
 				float tiempoDisponible = Float.parseFloat(perfilLeido[3]);
 
-				Usuario usuario = new Usuario(nombre, preferencias, dineroDisponible, tiempoDisponible);
-
-				usuarios.add(usuario);
+				switch (preferencias) {
+				case Values.Aventurero:
+					Aventurero aventurero = new Aventurero(nombre, dineroDisponible, tiempoDisponible);
+					usuarios.add(aventurero);
+					break;
+				case Values.Gloton:
+					Gloton gloton = new Gloton(nombre, dineroDisponible, tiempoDisponible);
+					usuarios.add(gloton);
+					break;
+				case Values.Naturalista:
+					Naturalista naturalista = new Naturalista(nombre, dineroDisponible, tiempoDisponible);
+					usuarios.add(naturalista);
+					break;
+				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -57,13 +76,14 @@ public class Archivo {
 				String nextLine = lector.nextLine();
 
 				String[] atraccionLeida = nextLine.split(",");
+				
+				String nombre = atraccionLeida[0];
+				double costo = Double.parseDouble(atraccionLeida[1]);
+				float duracion = Float.parseFloat(atraccionLeida[2]);
+				int cupo = Integer.parseInt(atraccionLeida[3]);
+				String tipo = atraccionLeida[4];
 
-				Atraccion atraccion = new Atraccion();
-				atraccion.setNombre(atraccionLeida[0]);
-				atraccion.setCosto(Double.parseDouble(atraccionLeida[1]));
-				atraccion.setDuracion(Float.parseFloat(atraccionLeida[2]));
-				atraccion.setCupo(Integer.parseInt(atraccionLeida[3]));
-				atraccion.setTipo(atraccionLeida[4]);
+				Atraccion atraccion = new Atraccion(nombre,costo,duracion,cupo,tipo);
 
 				atracciones.add(atraccion);
 			}
@@ -72,7 +92,8 @@ public class Archivo {
 		} finally {
 			lector.close();
 		}
-
+		
+		Collections.sort(atracciones, Archivo.getAtraccionComparador());
 		return atracciones;
 	}
 
@@ -96,13 +117,13 @@ public class Archivo {
 			while (lector.hasNextLine()) {
 				ArrayList<Atraccion> atracciones = new ArrayList<>();
 				String nextLine = lector.nextLine();
+				float duracion = 0;
 
 				String[] promocionLeida = nextLine.split(",");
 
-				Promocion promocion = new Promocion();
-				promocion.setNombre(promocionLeida[0]);
-				promocion.setTipo(promocionLeida[1]);
-				promocion.setCosto(Double.parseDouble(promocionLeida[2]));
+				String nombre = promocionLeida[0];
+				String tipo = promocionLeida[1];
+				double costo = Double.parseDouble(promocionLeida[2]);
 
 				String[] atraccion = promocionLeida[3].split(" - ");
 
@@ -110,11 +131,12 @@ public class Archivo {
 					for (Atraccion atraccionDisponible : atraccionesDisponibles) {
 						if (atraccionDisponible.getNombre().equals(nombreAtraccion)) {
 							atracciones.add(atraccionDisponible);
+							duracion += atraccionDisponible.getDuracion();
 						}
 					}
 				}
 
-				promocion.setAtracciones(atracciones);
+				Promocion promocion = new Promocion(nombre, tipo, costo, atracciones, duracion);
 
 				promociones.add(promocion);
 			}
@@ -123,7 +145,8 @@ public class Archivo {
 		} finally {
 			lector.close();
 		}
-
+		
+		Collections.sort(promociones, Archivo.getPromocionComparador());
 		return promociones;
 	}
 
@@ -138,5 +161,45 @@ public class Archivo {
 		File file = new File("files/input/" + this.nombre + ".csv");
 		reader = new Scanner(file);
 		return reader;
+	}
+
+	static Comparator<Promocion> getPromocionComparador() {
+		return new Comparator<Promocion>() {
+
+			@Override
+			public int compare(Promocion p1, Promocion p2) {
+				if (p1.getCosto() > p2.getCosto()) {
+					return -1;
+				} else if (p1.getCosto() < p2.getCosto()) {
+					return 1;
+				} else if (p1.getDuracion() > p2.getDuracion()) {
+					return -1;
+				} else if (p1.getDuracion() < p2.getDuracion()) {
+					return 1;
+				}
+
+				return 0;
+			}
+		};
+	}
+
+	static Comparator<Atraccion> getAtraccionComparador() {
+		return new Comparator<Atraccion>() {
+
+			@Override
+			public int compare(Atraccion a1, Atraccion a2) {
+					if (a1.getCosto() > a2.getCosto()) {
+						return -1;
+					} else if (a1.getCosto() < a2.getCosto()) {
+						return 1;
+					} else if (a1.getDuracion() > a2.getDuracion()) {
+						return -1;
+					} else if (a1.getDuracion() < a2.getDuracion()) {
+						return 1;
+					}
+
+					return 0;
+			}
+		};
 	}
 }
