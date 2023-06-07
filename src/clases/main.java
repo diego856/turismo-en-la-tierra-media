@@ -2,8 +2,6 @@ package clases;
 
 import java.util.ArrayList;
 
-import Usuarios.Usuario;
-
 public class main {
 
 	public static void main(String[] args) {

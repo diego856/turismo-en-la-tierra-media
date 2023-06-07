@@ -1,11 +1,7 @@
-package Usuarios;
+package clases;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import clases.Atraccion;
-import clases.Promocion;
-import clases.Values;
 
 public abstract class Usuario {
     protected String preferencia;

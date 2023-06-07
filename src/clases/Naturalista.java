@@ -1,20 +1,16 @@
-package Usuarios;
+package clases;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import clases.Atraccion;
-import clases.Promocion;
-import clases.Values;
-
-public class Aventurero extends Usuario {
-
-	public Aventurero(String nombre, double dineroDisponible, float tiempoDisponible) {
-		this.preferencia = Values.Aventurero;
-		this.dineroDisponible = dineroDisponible;
-		this.tiempoDisponible = tiempoDisponible;
-		this.nombre = nombre;
-	}
+public class Naturalista extends Usuario {
+	
+	public Naturalista(String nombre, double dineroDisponible, float tiempoDisponible) {
+        this.preferencia = Values.Naturalista;
+        this.dineroDisponible = dineroDisponible;
+        this.tiempoDisponible = tiempoDisponible;
+        this.nombre = nombre;
+    }
 
 	@Override
 	public void recibirSugerencias(ArrayList<Atraccion> atracciones, ArrayList<Promocion> promociones) {
@@ -66,6 +62,7 @@ public class Aventurero extends Usuario {
 				ofertarAtraccion(reader, atraccion);
 			}
 		}
-	}
 
+	}
+	
 }

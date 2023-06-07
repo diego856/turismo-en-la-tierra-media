@@ -3,12 +3,6 @@ package clases;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
-import Usuarios.Usuario;
-import Usuarios.Aventurero;
-import Usuarios.Gloton;
-import Usuarios.Naturalista;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

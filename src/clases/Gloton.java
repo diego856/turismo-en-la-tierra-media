@@ -1,16 +1,12 @@
-package Usuarios;
+package clases;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import clases.Atraccion;
-import clases.Promocion;
-import clases.Values;
-
-public class Naturalista extends Usuario {
+public class Gloton extends Usuario {
 	
-	public Naturalista(String nombre, double dineroDisponible, float tiempoDisponible) {
-        this.preferencia = Values.Naturalista;
+	public Gloton(String nombre, double dineroDisponible, float tiempoDisponible) {
+        this.preferencia = Values.Gloton;
         this.dineroDisponible = dineroDisponible;
         this.tiempoDisponible = tiempoDisponible;
         this.nombre = nombre;
@@ -68,5 +64,6 @@ public class Naturalista extends Usuario {
 		}
 
 	}
+	
 	
 }
