@@ -6,22 +6,15 @@ public class Atraccion {
 	private float duracion;
 	private int cupo;
 	private String tipo;
+	private boolean ofertada;
 
-	public Atraccion(String nombre, double costo, float duracion, int cupo, String tipo) throws Exception {
-		if (costo > 0 && duracion > 0 && cupo > 0) {
-			this.nombre = nombre;
-			this.costo = costo;
-			this.duracion = duracion;
-			this.cupo = cupo;
-			this.tipo = tipo;
-		} else {
-			throw new Exception("La atracción ingresada no es válida.");
-		}
-
-	}
-	
-	public Atraccion() {
-		super();
+	public Atraccion(String nombre, double costo, float duracion, int cupo, String tipo) {
+		this.nombre = nombre;
+		this.costo = costo;
+		this.duracion = duracion;
+		this.cupo = cupo;
+		this.tipo = tipo;
+		this.ofertada = false;
 	}
 
 	public String getNombre() {
@@ -41,7 +34,11 @@ public class Atraccion {
 	}
 
 	public float getDuracion() {
-		return duracion;
+		return this.duracion;
+	}
+	
+	public boolean getOfertada() {
+		return this.ofertada;
 	}
 
 	public void setDuracion(float duracion) {
@@ -63,12 +60,29 @@ public class Atraccion {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
+	
+	public void setOfertada(boolean ofertada) {
+		this.ofertada = ofertada;
+	}
+	
+	/*
 	@Override
 	public String toString() {
 		return "La atracción " + nombre + " es del tipo " + tipo + ", tiene un costo de " + costo
 				+ " monedas de oro. Cuenta con una duración aproximada de " + duracion
 				+ " horas, y consta de un cupo total para " + cupo + " personas.";
+	}*/
+	
+	@Override
+	public String toString() {
+		return nombre;
 	}
-
+	
+	public boolean tieneCupo() {
+		return this.cupo > 0;
+	}
+	
+	public void descontarCupo() {
+		this.cupo--;
+	}
 }
