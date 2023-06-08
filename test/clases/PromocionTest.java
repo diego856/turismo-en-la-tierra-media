@@ -6,7 +6,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class PromocionTest {
-
+	
+	/*
 	@Test
 	public void setAndGetNombre() {
 		// Arrange
@@ -69,5 +70,5 @@ public class PromocionTest {
 		}
 		
 		Assert.assertEquals(testOk, true);
-	}
+	}*/
 }

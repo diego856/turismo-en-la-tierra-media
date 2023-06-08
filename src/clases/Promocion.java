@@ -3,33 +3,48 @@ package clases;
 import java.util.ArrayList;
 
 public class Promocion {
+
 	private String nombre;
 	private String tipo;
 	private double costo;
 	private ArrayList<Atraccion> atracciones;
-	
-	public Promocion() {
-		super();
+	private float duracion;
+	private boolean ofertada;
+
+	// Constructor de Clase
+	public Promocion(String nombre, String tipo, double costo, ArrayList<Atraccion> atracciones, float duracion) {
+		this.nombre = nombre;
+		this.tipo = tipo;
+		this.costo = costo;
+		this.atracciones = atracciones;
+		this.duracion = duracion;
+		this.ofertada = false;
 	}
 
+	// Metodos de acceso (getters)
 	public String getNombre() {
 		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 
 	public String getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	// Funciones auxiliares
+	public void setOfertada(boolean ofertada) {
+		this.ofertada = ofertada;
 	}
 
 	public double getCosto() {
-		return costo;
+		return this.costo;
+	}
+
+	public boolean getOfertada() {
+		return this.ofertada;
+	}
+
+	public float getDuracion() {
+		return this.duracion;
 	}
 
 	public void setCosto(double costo) {
@@ -42,5 +57,14 @@ public class Promocion {
 
 	public void setAtracciones(ArrayList<Atraccion> atracciones) {
 		this.atracciones = atracciones;
+	}
+
+	public double precioOriginal() {
+		double precioOriginal = 0;
+		for (Atraccion atraccion : this.getAtracciones()) {
+			precioOriginal += atraccion.getCosto();
+		}
+
+		return precioOriginal;
 	}
 }
