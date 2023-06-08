@@ -8,6 +8,7 @@ public class Atraccion {
 	private String tipo;
 	private boolean ofertada;
 
+	// Constructor de Clase
 	public Atraccion(String nombre, double costo, float duracion, int cupo, String tipo) {
 		this.nombre = nombre;
 		this.costo = costo;
@@ -17,20 +18,13 @@ public class Atraccion {
 		this.ofertada = false;
 	}
 
+	// Metodos de acceso (getters y setters)
 	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
 	public double getCosto() {
 		return costo;
-	}
-
-	public void setCosto(double costo) {
-		this.costo = costo;
 	}
 
 	public float getDuracion() {
@@ -41,43 +35,19 @@ public class Atraccion {
 		return this.ofertada;
 	}
 
-	public void setDuracion(float duracion) {
-		this.duracion = duracion;
-	}
-
 	public int getCupo() {
 		return cupo;
 	}
 
-	public void setCupo(int cupo) {
-		this.cupo = cupo;
-	}
-
 	public String getTipo() {
 		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
 	}
 	
 	public void setOfertada(boolean ofertada) {
 		this.ofertada = ofertada;
 	}
 	
-	/*
-	@Override
-	public String toString() {
-		return "La atracción " + nombre + " es del tipo " + tipo + ", tiene un costo de " + costo
-				+ " monedas de oro. Cuenta con una duración aproximada de " + duracion
-				+ " horas, y consta de un cupo total para " + cupo + " personas.";
-	}*/
-	
-	@Override
-	public String toString() {
-		return nombre;
-	}
-	
+	// Funciones auxiliares
 	public boolean tieneCupo() {
 		return this.cupo > 0;
 	}

@@ -1,74 +1,48 @@
 package clases;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class PromocionTest {
-	
-	/*
-	@Test
-	public void setAndGetNombre() {
-		// Arrange
-		Promocion promocion = new Promocion();
-		String nombreTest = "nombreTest";
+	private Promocion promocionTest;
+	private Atraccion atraccionTest;
 
-		// Act
-		promocion.setNombre(nombreTest);
-
-		// Assert
-		Assert.assertEquals(nombreTest, promocion.getNombre());
+	@Before
+	public void setUp() {
+		atraccionTest = new Atraccion("promoTest", (double) 1, (float) 0.5, 10, "Aventura");
+		ArrayList<Atraccion> atraccionesTest = new ArrayList<>();
+		atraccionesTest.add(atraccionTest);
+		promocionTest = new Promocion("promoTest", "Aventura", (double) 1, atraccionesTest, (float) 0.5);
 	}
 
 	@Test
-	public void setAndGetTipo() {
+	public void GetNombre() {
 		// Arrange
-		Promocion promocion = new Promocion();
-		String nombreTipo = "nombreTipo";
-
-		// Act
-		promocion.setTipo(nombreTipo);
+		String nombrePromo = "promoTest";
+		
+		System.out.println(promocionTest.getAtracciones());
 
 		// Assert
-		Assert.assertEquals(nombreTipo, promocion.getTipo());
+		Assert.assertEquals(nombrePromo, promocionTest.getNombre());
 	}
-	
-	@Test
-	public void setAndGetCosto() {
-		// Arrange
-		Promocion promocion = new Promocion();
-		double costo = 15.5;
-		boolean testOk = false;
 
-		// Act
-		promocion.setCosto(costo);
+	@Test
+	public void GetTipo() {
+		// Arrange
+		String nombreTipo = "Aventura";
 
 		// Assert
-		if (costo == promocion.getCosto()){
-			testOk = true;
-		}
-		
-		Assert.assertEquals(testOk, true);
+		Assert.assertEquals(nombreTipo, promocionTest.getTipo());
 	}
-	
+
 	@Test
-	public void setAndGetAtracciones() throws Exception {
+	public void GetCosto() {
 		// Arrange
-		Promocion promocion = new Promocion();
-		Atraccion moria = new Atraccion("Moria", 10, 2, 6, "Aventura");
-		Atraccion erebor = new Atraccion("Erebor", 12, 3, 32, "Paisajes");
-		ArrayList<Atraccion> atracciones = new ArrayList<>( Arrays. asList(moria, erebor));
-		boolean testOk = false;
-		
-		// Act
-		promocion.setAtracciones(atracciones);
+		double costo = 1;
 
 		// Assert
-		if (promocion.getAtracciones().equals(atracciones) ) {
-			testOk = true;
-		}
-		
-		Assert.assertEquals(testOk, true);
-	}*/
+		Assert.assertEquals(costo, promocionTest.getCosto(), 0);
+	}
 }

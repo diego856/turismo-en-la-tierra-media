@@ -2,8 +2,7 @@ package clases;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
-public class main {
-
+public class Main {
 	public static void main(String[] args) {
 		//Carga de Archivos
 		Archivo archivo = new Archivo("atracciones");
