@@ -67,4 +67,9 @@ public class Promocion {
 
 		return precioOriginal;
 	}
+	
+	public double descuentoObtenido() {
+		return this.precioOriginal() - this.getCosto();
+	}
+	
 }

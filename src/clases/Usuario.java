@@ -182,7 +182,7 @@ public class Usuario {
 		}
 	}
 
-	private ArrayList<Promocion> ofertarPromocion(Scanner reader, Promocion promocion, FileWriter file, Archivo archivo) {
+	private ArrayList<Promocion> ofertarPromocion(Scanner reader, Promocion promocion, FileWriter file, Archivo archivo){
 		ArrayList<Promocion> promocionesAceptadas = new ArrayList<>();
 		String decision;
 		System.out.println("\n" + "PROMOCION");
@@ -190,6 +190,7 @@ public class Usuario {
 		System.out.println("- Duracion: " + promocion.getDuracion() + "hs");
 		System.out.println("- Precio original: " + promocion.precioOriginal());
 		System.out.println("- Precio con descuento: " + promocion.getCosto());
+		System.out.println("- Monto ahorrado por promoción: " + promocion.descuentoObtenido());
 
 		// Mientras no ingrese la letra indicada, volvera a preguntar
 		do {
@@ -216,7 +217,7 @@ public class Usuario {
 		return promocionesAceptadas;
 	}
 
-	private ArrayList<Atraccion> ofertarAtraccion(Scanner reader, Atraccion atraccion, FileWriter file, Archivo archivo) {
+	private ArrayList<Atraccion> ofertarAtraccion(Scanner reader, Atraccion atraccion, FileWriter file, Archivo archivo){
 		ArrayList<Atraccion> atraccionesAceptadas = new ArrayList<>();
 		String decision;
 		System.out.println("\n" + "ATRACCION");

@@ -30,7 +30,7 @@ public class Atraccion {
 	public float getDuracion() {
 		return this.duracion;
 	}
-	
+
 	public boolean getOfertada() {
 		return this.ofertada;
 	}
@@ -42,17 +42,17 @@ public class Atraccion {
 	public String getTipo() {
 		return tipo;
 	}
-	
+
 	public void setOfertada(boolean ofertada) {
 		this.ofertada = ofertada;
 	}
-	
+
 	// Funciones auxiliares
 	public boolean tieneCupo() {
 		return this.cupo > 0;
 	}
-	
-	public void descontarCupo() {
-		this.cupo--;
+
+	public void descontarCupo(){
+			this.cupo--;
 	}
 }
