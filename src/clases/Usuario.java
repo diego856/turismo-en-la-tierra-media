@@ -190,7 +190,7 @@ public class Usuario {
 		System.out.println("- Duracion: " + promocion.getDuracion() + "hs");
 		System.out.println("- Precio original: " + promocion.precioOriginal());
 		System.out.println("- Precio con descuento: " + promocion.getCosto());
-		System.out.println("- Monto ahorrado por promoción: " + promocion.descuentoObtenido());
+		System.out.println("- Monto ahorrado por promocion: " + promocion.descuentoObtenido());
 
 		// Mientras no ingrese la letra indicada, volvera a preguntar
 		do {

@@ -7,19 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class PromocionTest {
-	private Promocion promocionTest;
-	private Atraccion atraccionTest;
-	
 	private Promocion promoAventura;
 	private ArrayList<Atraccion> atraccionesDeLaPromo;
 
 	@Before
-	public void setUp() {
-		atraccionTest = new Atraccion("promoTest", (double) 1, (float) 0.5, 10, "Aventura");
-		ArrayList<Atraccion> atraccionesTest = new ArrayList<>();
-		atraccionesTest.add(atraccionTest);
-		promocionTest = new Promocion("promoTest", "Aventura", (double) 1, atraccionesTest, (float) 0.5);
-		
+	public void setUp() {		
 		atraccionesDeLaPromo = new ArrayList<Atraccion>();
 		atraccionesDeLaPromo.add(new Atraccion("Moria", 10, 2, 6, "Aventura"));
 		atraccionesDeLaPromo.add(new Atraccion("Erabor", 12, 3, 0, "Aventura"));
@@ -30,30 +22,31 @@ public class PromocionTest {
 	@Test
 	public void GetNombre() {
 		// Arrange
-		String nombrePromo = "promoTest";
-		
-		System.out.println(promocionTest.getAtracciones());
+		String nombreEsperado = "Pack Aventura";
+		String nombreActual = promoAventura.getNombre();
 
 		// Assert
-		Assert.assertEquals(nombrePromo, promocionTest.getNombre());
+		Assert.assertEquals(nombreEsperado, nombreActual);
 	}
 
 	@Test
 	public void GetTipo() {
 		// Arrange
-		String nombreTipo = "Aventura";
+		String tipoEsperado = "Aventura";
+		String tipoActual = promoAventura.getTipo();
 
 		// Assert
-		Assert.assertEquals(nombreTipo, promocionTest.getTipo());
+		Assert.assertEquals(tipoEsperado, tipoActual);
 	}
 
 	@Test
 	public void GetCosto() {
 		// Arrange
-		double costo = 1;
+		double costoEsperado = 5.4;
+		double costoActual = promoAventura.getCosto();
 
 		// Assert
-		Assert.assertEquals(costo, promocionTest.getCosto(), 0);
+		Assert.assertEquals(costoEsperado, costoActual, 0);
 	}
 	
 	@Test
