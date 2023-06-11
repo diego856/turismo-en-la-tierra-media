@@ -68,7 +68,7 @@ public class Promocion {
 		return precioOriginal;
 	}
 
-	public String imprimierAtracciones() {
+	public String imprimirAtracciones() {
 		String listaAtracciones = "[";
 
 		for (int i = 0; i < this.atracciones.size(); i++) {

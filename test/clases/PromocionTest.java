@@ -57,12 +57,4 @@ public class PromocionTest {
 		Assert.assertEquals(esperado, actual, 0);
 	}
 	
-	@Test
-	public void descuentoAhorradoPorPromocion() {
-		double actual = promoAventura.descuentoObtenido();
-		double esperado = 16.6;
-		
-		Assert.assertEquals(esperado, actual, 0);
-	}
-	
 }

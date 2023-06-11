@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Usuario {
-	protected String preferencia;
-	protected double dineroDisponible;
-	protected float tiempoDisponible;
-	protected String nombre;
-
+	private String nombre;
+	private String preferencia;
+	private double dineroDisponible;
+	private float tiempoDisponible;
+	
 	// Constructor de Clase
 	public Usuario(String nombre, String preferencia, double dineroDisponible, float tiempoDisponible) {
 		this.preferencia = preferencia;
@@ -19,6 +19,11 @@ public class Usuario {
 	}
 
 	// Metodos de acceso (getters)
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
 	public String getPreferencia() {
 		return preferencia;
 	}
@@ -29,10 +34,6 @@ public class Usuario {
 
 	public float getTiempoDisponible() {
 		return tiempoDisponible;
-	}
-
-	public String getNombre() {
-		return nombre;
 	}
 
 	// Funciones auxiliares
@@ -187,7 +188,7 @@ public class Usuario {
 		String decision;
 		System.out.println("\n" + "PROMOCION");
 		System.out.println("- Nombre: " + promocion.getNombre());
-		System.out.println("- Atracciones incluidas: " + promocion.imprimierAtracciones() );// + promocion.getAtracciones());
+		System.out.println("- Atracciones incluidas: " + promocion.imprimirAtracciones() );// + promocion.getAtracciones());
 		System.out.println("- Duracion: " + promocion.getDuracion() + " hs");
 		System.out.println("- Precio original: " + promocion.precioOriginal() + " monedas de oro");
 		System.out.println("- Precio con descuento: " + promocion.getCosto() + " monedas de oro");
