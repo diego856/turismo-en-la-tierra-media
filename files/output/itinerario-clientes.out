@@ -8,27 +8,35 @@ Nombre de Usuario: Frodo
 Itinerario:
 
 Promocion:
-Pack Aventura
-Atracciones Incluidas: [Bosque negro, Lothlorien]
+Pack Exploracion
+Atracciones Incluidas: [Bosque negro, Moria]
 Tipo: Aventura
-Costo: 5.4 Monedas de oro
-Duracion: 5.0 Horas
+Costo: 10.4 Monedas de oro
+Duracion: 6.0 Horas
 
-Atraccion:
-Mordor
-Costo: 25.0 Monedas de oro
-Duracion: 3.0 Horas
-
-Costo Total: 30.4 Monedas de Oro
-Duracion Total: 8.0 Horas
+Costo Total: 10.4 Monedas de Oro
+Duracion Total: 6.0 Horas
 ----------------------------------------------
 ----------------------------------------------
 Nombre de Usuario: Galadriel
 ----------------------------------------------
 Itinerario:
 
-No acepto ninguna sugerencia
-=(
+Promocion:
+Pack Paisajista
+Atracciones Incluidas: [Minas Tirith, Abismo de Helm, Erebor]
+Tipo: Paisajes
+Costo: 10.0 Monedas de oro
+Duracion: 7.5 Horas
+
+Atraccion:
+Rivendell
+Tipo: Paisajes
+Costo: 10.0 Monedas de oro
+Duracion: 1.0 Horas
+
+Costo Total: 20.0 Monedas de Oro
+Duracion Total: 8.5 Horas
 ----------------------------------------------
 ----------------------------------------------
 Nombre de Usuario: Sam
@@ -36,13 +44,27 @@ Nombre de Usuario: Sam
 Itinerario:
 
 Promocion:
-Pack Paisajes
-Atracciones Incluidas: [Minas Tirith, Abismo de Helm, Erebor]
-Tipo: Paisajes
-Costo: 10.0 Monedas de oro
-Duracion: 7.5 Horas
+Pack Velada
+Atracciones Incluidas: [El dragon verde, La Comarca]
+Tipo: Degustacion
+Costo: 11.0 Monedas de oro
+Duracion: 8.5 Horas
 
-Costo Total: 10.0 Monedas de Oro
-Duracion Total: 7.5 Horas
+Atraccion:
+Moria
+Tipo: Aventura
+Costo: 10.0 Monedas de oro
+Duracion: 2.0 Horas
+
+Costo Total: 21.0 Monedas de Oro
+Duracion Total: 10.5 Horas
+----------------------------------------------
+----------------------------------------------
+Nombre de Usuario: Legolas
+----------------------------------------------
+Itinerario:
+
+No acepto ninguna sugerencia
+=(
 ----------------------------------------------
 ----------------------------------------------

@@ -2,7 +2,7 @@ package clases;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
-public class main {
+public class Main {
 	public static void main(String[] args) {
 		//Carga de Archivos
 		Archivo archivo = new Archivo("atracciones");
@@ -14,7 +14,7 @@ public class main {
 		archivo.setNombre("perfiles-de-usuarios");
 		ArrayList<Usuario> usuarios = archivo.leerPerfilesDeUsuarios();
 		
-		archivo.setNombre("itinerario-presentacion");
+		archivo.setNombre("itinerario-clientes");
 		FileWriter file = archivo.crearArchivo();
 		
 		String[] inicioArchivo = new String[3];

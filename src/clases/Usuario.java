@@ -186,12 +186,11 @@ public class Usuario {
 		ArrayList<Promocion> promocionesAceptadas = new ArrayList<>();
 		String decision;
 		System.out.println("\n" + "PROMOCION");
-		System.out.println("- " + promocion.getNombre());
+		System.out.println("- Nombre: " + promocion.getNombre());
 		System.out.println("- Atracciones incluidas: " + promocion.imprimierAtracciones() );// + promocion.getAtracciones());
-		System.out.println("- Duracion: " + promocion.getDuracion() + "hs");
-		System.out.println("- Precio original: " + promocion.precioOriginal());
-		System.out.println("- Precio con descuento: " + promocion.getCosto());
-		System.out.println("- Monto ahorrado por promocion: " + promocion.descuentoObtenido());
+		System.out.println("- Duracion: " + promocion.getDuracion() + " hs");
+		System.out.println("- Precio original: " + promocion.precioOriginal() + " monedas de oro");
+		System.out.println("- Precio con descuento: " + promocion.getCosto() + " monedas de oro");
 
 		// Mientras no ingrese la letra indicada, volvera a preguntar
 		do {
@@ -220,8 +219,8 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "El Usuario " + nombre + ", cuenta con un presupuesto de " + dineroDisponible + " moneda/s de oro, y tiempo disponible de "
-				+ tiempoDisponible  + " hs. Las atracciones de su preferencia son del tipo: " + preferencia + ".";
+		return "Contas con un presupuesto de " + dineroDisponible + " moneda/s de oro, y tiempo disponible de "
+				+ tiempoDisponible  + " hs. Tus atracciones preferidas son del tipo: " + preferencia + ".";
 	}
 
 	private ArrayList<Atraccion> ofertarAtraccion(Scanner reader, Atraccion atraccion, FileWriter file, Archivo archivo){
