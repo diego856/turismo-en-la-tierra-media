@@ -186,7 +186,8 @@ public class Usuario {
 		ArrayList<Promocion> promocionesAceptadas = new ArrayList<>();
 		String decision;
 		System.out.println("\n" + "PROMOCION");
-		System.out.println("- Atracciones incluidas: " + promocion.getAtracciones());
+		System.out.println("- " + promocion.getNombre());
+		System.out.println("- Atracciones incluidas: " + promocion.imprimierAtracciones() );// + promocion.getAtracciones());
 		System.out.println("- Duracion: " + promocion.getDuracion() + "hs");
 		System.out.println("- Precio original: " + promocion.precioOriginal());
 		System.out.println("- Precio con descuento: " + promocion.getCosto());
@@ -217,12 +218,19 @@ public class Usuario {
 		return promocionesAceptadas;
 	}
 
+	@Override
+	public String toString() {
+		return "El Usuario " + nombre + ", cuenta con un presupuesto de " + dineroDisponible + " moneda/s de oro, y tiempo disponible de "
+				+ tiempoDisponible  + " hs. Las atracciones de su preferencia son del tipo: " + preferencia + ".";
+	}
+
 	private ArrayList<Atraccion> ofertarAtraccion(Scanner reader, Atraccion atraccion, FileWriter file, Archivo archivo){
 		ArrayList<Atraccion> atraccionesAceptadas = new ArrayList<>();
 		String decision;
 		System.out.println("\n" + "ATRACCION");
+		System.out.println("- " + atraccion.getTipo());
 		System.out.println("- Nombre: " + atraccion.getNombre());
-		System.out.println("- Precio: $" + atraccion.getCosto());
+		System.out.println("- Precio: " + atraccion.getCosto());
 		System.out.println("- Duracion: " + atraccion.getDuracion() + "hs");
 
 		// Mientras no ingrese la letra indicada, volvera a preguntar

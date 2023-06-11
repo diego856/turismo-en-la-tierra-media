@@ -67,9 +67,23 @@ public class Promocion {
 
 		return precioOriginal;
 	}
-	
+
 	public double descuentoObtenido() {
 		return this.precioOriginal() - this.getCosto();
 	}
-	
+
+	public String imprimierAtracciones() {
+		String listaAtracciones = "[";
+
+		for (int i = 0; i < this.atracciones.size(); i++) {
+			if (i < this.atracciones.size() - 1) {
+				listaAtracciones += atracciones.get(i).getNombre() + ", ";
+			} else {
+				listaAtracciones += atracciones.get(i).getNombre() + "]";
+			}
+		}
+
+		return listaAtracciones;
+	}
+
 }
