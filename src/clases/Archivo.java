@@ -234,8 +234,7 @@ public class Archivo {
 			printerWriter.println("]");
 			printerWriter.println("Tipo: " + promocion.getTipo());
 			printerWriter.println("Costo: " + promocion.getCosto() + " Monedas de oro");
-			printerWriter.println("Duracion: " + promocion.getDuracion() + " Horas");
-			printerWriter.println("Monto ahorrado por promocion: " + promocion.descuentoObtenido() + " Monedas de oro\n");
+			printerWriter.println("Duracion: " + promocion.getDuracion() + " Horas" + "\n");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
