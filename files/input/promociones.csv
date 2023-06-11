@@ -1,5 +1,7 @@
 Nombre,Tipo,Precio,Atracciones
-Pack Aventura,Aventura,1,Minas Tirith
-Pack Degustacion,Degustacion,36,La Comarca - Lothlorien
-Pack Paisajes,Paisajes,10,Minas Tirith - Abismo de Helm - Erebor
-Pack Aventura,Aventura,5.4,Bosque negro - Lothlorien
+Pack Exploracion,Aventura,10.4,Bosque negro - Moria
+Pack Gloton,Degustacion,36,La Comarca - Lothlorien
+Pack Paisajista,Paisajes,10,Minas Tirith - Abismo de Helm - Erebor
+Pack Oscuro,Aventura,22.4,Mordor - Bosque negro
+Pack Velada,Degustacion,11,El dragon verde - La Comarca
+Pack Vistas,Paisajes,18,Rio Anduin - Rivendell

@@ -186,6 +186,7 @@ public class Usuario {
 		ArrayList<Promocion> promocionesAceptadas = new ArrayList<>();
 		String decision;
 		System.out.println("\n" + "PROMOCION");
+		System.out.println("- Nombre: " + promocion.getNombre());
 		System.out.println("- Atracciones incluidas: " + promocion.getAtracciones());
 		System.out.println("- Duracion: " + promocion.getDuracion() + "hs");
 		System.out.println("- Precio original: " + promocion.precioOriginal());

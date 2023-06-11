@@ -1,9 +1,13 @@
 Nombre,Costo,Duracion,Cupo,Tipo
-Moria,10,2,6,Aventura
+Moria,10,2,2,Aventura
 Minas Tirith,5,2.5,25,Paisajes
 La Comarca,3,6.5,150,Degustacion
-Abismo de Helm,5,2,15,Paisajes
+Abismo de Helm,5,2,1,Paisajes
 Lothlorien,35,1,1,Degustacion
 Erebor,12,3,32,Paisajes
 Bosque negro,3,4,12,Aventura
 Mordor,25,3,4,Aventura
+Rivendell,10,1,1,Paisajes
+Isla Sur,10,3,2,Aventura
+Rio Anduin,10,1,3,Paisajes
+El dragon verde,10,2,2,Degustacion
