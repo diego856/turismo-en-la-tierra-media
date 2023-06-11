@@ -2,7 +2,7 @@ package clases;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
-public class Main {
+public class main {
 	public static void main(String[] args) {
 		//Carga de Archivos
 		Archivo archivo = new Archivo("atracciones");
@@ -14,7 +14,7 @@ public class Main {
 		archivo.setNombre("perfiles-de-usuarios");
 		ArrayList<Usuario> usuarios = archivo.leerPerfilesDeUsuarios();
 		
-		archivo.setNombre("itinerario-clientes");
+		archivo.setNombre("itinerario-presentacion");
 		FileWriter file = archivo.crearArchivo();
 		
 		String[] inicioArchivo = new String[3];
@@ -27,8 +27,9 @@ public class Main {
 		// Ofrecer Sugerencias
 		for (Usuario usuario : usuarios) {
 			System.out.println("¡Bienvenido/a " + usuario.getNombre() + "!");
-			System.out.println("A continuacion te realizaremos algunas sugerencias para tu estadía:");
-		
+			System.out.println(usuario);
+			System.out.println("\nA continuacion te realizaremos algunas sugerencias para tu estadía:");			
+			
 			usuario.recibirSugerencias(atracciones, promociones, file, archivo);
 
 			for (Atraccion atraccion : atracciones) {

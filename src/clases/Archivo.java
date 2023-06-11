@@ -234,7 +234,8 @@ public class Archivo {
 			printerWriter.println("]");
 			printerWriter.println("Tipo: " + promocion.getTipo());
 			printerWriter.println("Costo: " + promocion.getCosto() + " Monedas de oro");
-			printerWriter.println("Duracion: " + promocion.getDuracion() + " Horas" + "\n");
+			printerWriter.println("Duracion: " + promocion.getDuracion() + " Horas");
+			printerWriter.println("Monto ahorrado por promocion: " + promocion.descuentoObtenido() + " Monedas de oro\n");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -246,6 +247,7 @@ public class Archivo {
 		try {
 			printerWriter = new PrintWriter(file);
 			printerWriter.println("Atraccion:\n" + atraccion.getNombre());
+			printerWriter.println("Tipo: " + atraccion.getTipo());
 			printerWriter.println("Costo: " + atraccion.getCosto() + " Monedas de oro");
 			printerWriter.println("Duracion: " + atraccion.getDuracion() + " Horas" + "\n");
 		} catch (Exception e) {
