@@ -50,6 +50,7 @@ public class Main {
 		finArchivo[1] = Values.Separador;
 		archivo.agregarTextoEnArchivo(finArchivo, file);
 		
+		// Cierre de Archivo
 		archivo.cerrarArchivo(file);
 	}
 }
