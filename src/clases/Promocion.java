@@ -1,6 +1,7 @@
 package clases;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Promocion {
 
@@ -30,7 +31,10 @@ public class Promocion {
 		return tipo;
 	}
 
-	// Funciones auxiliares
+	public boolean getOfertada() {
+		return this.ofertada;
+	}
+
 	public void setOfertada(boolean ofertada) {
 		this.ofertada = ofertada;
 	}
@@ -39,16 +43,12 @@ public class Promocion {
 		return this.costo;
 	}
 
-	public boolean getOfertada() {
-		return this.ofertada;
+	public void setCosto(double costo) {
+		this.costo = costo;
 	}
 
 	public float getDuracion() {
 		return this.duracion;
-	}
-
-	public void setCosto(double costo) {
-		this.costo = costo;
 	}
 
 	public ArrayList<Atraccion> getAtracciones() {
@@ -59,6 +59,7 @@ public class Promocion {
 		this.atracciones = atracciones;
 	}
 
+	// Funciones Auxiliares
 	public double precioOriginal() {
 		double precioOriginal = 0;
 		for (Atraccion atraccion : this.getAtracciones()) {
@@ -82,4 +83,23 @@ public class Promocion {
 		return listaAtracciones;
 	}
 
+	static Comparator<Promocion> getPromocionComparador() {
+		return new Comparator<Promocion>() {
+
+			@Override
+			public int compare(Promocion p1, Promocion p2) {
+				if (p1.getCosto() > p2.getCosto()) {
+					return -1;
+				} else if (p1.getCosto() < p2.getCosto()) {
+					return 1;
+				} else if (p1.getDuracion() > p2.getDuracion()) {
+					return -1;
+				} else if (p1.getDuracion() < p2.getDuracion()) {
+					return 1;
+				}
+
+				return 0;
+			}
+		};
+	}
 }

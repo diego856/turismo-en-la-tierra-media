@@ -9,7 +9,7 @@ public class Usuario {
 	private String preferencia;
 	private double dineroDisponible;
 	private float tiempoDisponible;
-	
+
 	// Constructor de Clase
 	public Usuario(String nombre, String preferencia, double dineroDisponible, float tiempoDisponible) {
 		this.preferencia = preferencia;
@@ -19,11 +19,10 @@ public class Usuario {
 	}
 
 	// Metodos de acceso (getters)
-	
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public String getPreferencia() {
 		return preferencia;
 	}
@@ -74,7 +73,7 @@ public class Usuario {
 		ArrayList<Atraccion> atraccionesAceptadas = new ArrayList<>();
 		double costoTotal = 0;
 		float duracionTotal = 0;
-		
+
 		Scanner reader = new Scanner(System.in);
 
 		String[] inicioCliente = new String[5];
@@ -103,8 +102,8 @@ public class Usuario {
 
 				// Se oferta la promocion
 				if (puedeOfertar) {
-					promocionesAceptadas = ofertarPromocion(reader, promocion, file, archivo);
-					if(!promocionesAceptadas.isEmpty()) {
+					promocionesAceptadas = recibirPromocion(reader, promocion, file, archivo);
+					if (!promocionesAceptadas.isEmpty()) {
 						for (Promocion promo : promocionesAceptadas) {
 							costoTotal += promo.getCosto();
 							duracionTotal += promo.getDuracion();
@@ -119,8 +118,8 @@ public class Usuario {
 		for (Atraccion atraccion : atracciones) {
 			if (!atraccion.getOfertada() && esAtraccionDePreferencia(atraccion.getTipo()) && atraccion.tieneCupo()
 					&& this.tieneTiempoYDinero(atraccion.getDuracion(), atraccion.getCosto())) {
-				atraccionesAceptadas = ofertarAtraccion(reader, atraccion, file, archivo);
-				if(!atraccionesAceptadas.isEmpty()) {
+				atraccionesAceptadas = recibirAtraccion(reader, atraccion, file, archivo);
+				if (!atraccionesAceptadas.isEmpty()) {
 					for (Atraccion atrac : atraccionesAceptadas) {
 						costoTotal += atrac.getCosto();
 						duracionTotal += atrac.getDuracion();
@@ -145,8 +144,8 @@ public class Usuario {
 
 				// Se oferta la promocion
 				if (puedeOfertar) {
-					promocionesAceptadas = ofertarPromocion(reader, promocion, file, archivo);
-					if(!promocionesAceptadas.isEmpty()) {
+					promocionesAceptadas = recibirPromocion(reader, promocion, file, archivo);
+					if (!promocionesAceptadas.isEmpty()) {
 						for (Promocion promo : promocionesAceptadas) {
 							costoTotal += promo.getCosto();
 							duracionTotal += promo.getDuracion();
@@ -161,8 +160,8 @@ public class Usuario {
 		for (Atraccion atraccion : atracciones) {
 			if (!atraccion.getOfertada() && atraccion.tieneCupo()
 					&& this.tieneTiempoYDinero(atraccion.getDuracion(), atraccion.getCosto())) {
-				atraccionesAceptadas = ofertarAtraccion(reader, atraccion, file, archivo);
-				if(!atraccionesAceptadas.isEmpty()) {
+				atraccionesAceptadas = recibirAtraccion(reader, atraccion, file, archivo);
+				if (!atraccionesAceptadas.isEmpty()) {
 					for (Atraccion atrac : atraccionesAceptadas) {
 						costoTotal += atrac.getCosto();
 						duracionTotal += atrac.getDuracion();
@@ -170,25 +169,27 @@ public class Usuario {
 				}
 			}
 		}
-		
+
 		String[] finCliente = new String[2];
 		if (costoTotal == 0 && duracionTotal == 0) {
 			finCliente[0] = "No acepto ninguna sugerencia";
 			finCliente[1] = "=(";
 			archivo.agregarTextoEnArchivo(finCliente, file);
-		}else {
+		} else {
 			finCliente[0] = "Costo Total: " + costoTotal + " Monedas de Oro";
 			finCliente[1] = "Duracion Total: " + duracionTotal + " Horas";
 			archivo.agregarTextoEnArchivo(finCliente, file);
 		}
 	}
 
-	private ArrayList<Promocion> ofertarPromocion(Scanner reader, Promocion promocion, FileWriter file, Archivo archivo){
+	private ArrayList<Promocion> recibirPromocion(Scanner reader, Promocion promocion, FileWriter file,
+			Archivo archivo) {
 		ArrayList<Promocion> promocionesAceptadas = new ArrayList<>();
 		String decision;
 		System.out.println("\n" + "PROMOCION");
 		System.out.println("- Nombre: " + promocion.getNombre());
-		System.out.println("- Atracciones incluidas: " + promocion.imprimirAtracciones() );// + promocion.getAtracciones());
+		System.out.println("- Atracciones incluidas: " + promocion.imprimirAtracciones());// +
+																							// promocion.getAtracciones());
 		System.out.println("- Duracion: " + promocion.getDuracion() + " hs");
 		System.out.println("- Precio original: " + promocion.precioOriginal() + " monedas de oro");
 		System.out.println("- Precio con descuento: " + promocion.getCosto() + " monedas de oro");
@@ -218,13 +219,8 @@ public class Usuario {
 		return promocionesAceptadas;
 	}
 
-	@Override
-	public String toString() {
-		return "Contas con un presupuesto de " + dineroDisponible + " moneda/s de oro, y tiempo disponible de "
-				+ tiempoDisponible  + " hs. Tus atracciones preferidas son del tipo: " + preferencia + ".";
-	}
-
-	private ArrayList<Atraccion> ofertarAtraccion(Scanner reader, Atraccion atraccion, FileWriter file, Archivo archivo){
+	private ArrayList<Atraccion> recibirAtraccion(Scanner reader, Atraccion atraccion, FileWriter file,
+			Archivo archivo) {
 		ArrayList<Atraccion> atraccionesAceptadas = new ArrayList<>();
 		String decision;
 		System.out.println("\n" + "ATRACCION");
@@ -250,7 +246,13 @@ public class Usuario {
 		}
 
 		atraccion.setOfertada(true);
-		
+
 		return atraccionesAceptadas;
+	}
+
+	@Override
+	public String toString() {
+		return "Contas con un presupuesto de " + dineroDisponible + " moneda/s de oro, y tiempo disponible de "
+				+ tiempoDisponible + " hs. Tus atracciones preferidas son del tipo: " + preferencia + ".";
 	}
 }
