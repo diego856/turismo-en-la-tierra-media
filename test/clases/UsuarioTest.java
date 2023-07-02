@@ -13,23 +13,42 @@ public class UsuarioTest {
 	}
 
 	@Test
-	public void testGetNombre() {
-		Assert.assertEquals("Juan", usuario.getNombre());
+	public void getNombre() {
+		// Arrange
+		String nombreEsperado = "Juan";
+		String nombreActual = usuario.getNombre();
+
+		// Assert
+		Assert.assertEquals(nombreEsperado, nombreActual);
 	}
 
 	@Test
-	public void testGetPreferencia() {
-		Assert.assertEquals("Preferencia1", usuario.getPreferencia());
+	public void getPreferencia() {
+		// Arrange
+		String preferenciaEsperado = "Preferencia1";
+		String preferenciaActual = usuario.getPreferencia();
+
+		// Assert
+		Assert.assertEquals(preferenciaEsperado, preferenciaActual);
 	}
 
 	@Test
-	public void testGetTiempoDisponible() {
-		Assert.assertEquals(50, usuario.getTiempoDisponible(), 0);
+	public void getTiempoDisponible() {
+		// Arrange
+		float tiempoEsperado = 50;
+		float tiempoActual = usuario.getTiempoDisponible();
+
+		// Assert
+		Assert.assertEquals(tiempoEsperado, tiempoActual, 0);
 	}
 
 	@Test
-	public void testGetDineroDisponible() {
-		Assert.assertEquals(100, usuario.getDineroDisponible(), 0);
-	}
+	public void getDineroDisponible() {
+		// Arrange
+		double dineroEsperado = 100;
+		double dineroActual = usuario.getDineroDisponible();
 
+		// Assert
+		Assert.assertEquals(dineroEsperado, dineroActual, 0);
+	}
 }

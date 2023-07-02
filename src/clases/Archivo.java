@@ -8,7 +8,6 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class Archivo {
 	private String nombre;
@@ -90,7 +89,7 @@ public class Archivo {
 		}
 
 		// Se ordena la coleccion segun las de mayor costo y duracion
-		Collections.sort(atracciones, Archivo.getAtraccionComparador());
+		Collections.sort(atracciones, Atraccion.getAtraccionComparador());
 
 		return atracciones;
 	}
@@ -137,7 +136,7 @@ public class Archivo {
 		}
 
 		// Se ordena la coleccion segun las de mayor costo y duracion
-		Collections.sort(promociones, Archivo.getPromocionComparador());
+		Collections.sort(promociones, Promocion.getPromocionComparador());
 
 		return promociones;
 	}
@@ -154,47 +153,6 @@ public class Archivo {
 		File file = new File("files/input/" + this.nombre + ".csv");
 		reader = new Scanner(file);
 		return reader;
-	}
-
-	// Comparadores
-	static Comparator<Promocion> getPromocionComparador() {
-		return new Comparator<Promocion>() {
-
-			@Override
-			public int compare(Promocion p1, Promocion p2) {
-				if (p1.getCosto() > p2.getCosto()) {
-					return -1;
-				} else if (p1.getCosto() < p2.getCosto()) {
-					return 1;
-				} else if (p1.getDuracion() > p2.getDuracion()) {
-					return -1;
-				} else if (p1.getDuracion() < p2.getDuracion()) {
-					return 1;
-				}
-
-				return 0;
-			}
-		};
-	}
-
-	static Comparator<Atraccion> getAtraccionComparador() {
-		return new Comparator<Atraccion>() {
-
-			@Override
-			public int compare(Atraccion a1, Atraccion a2) {
-				if (a1.getCosto() > a2.getCosto()) {
-					return -1;
-				} else if (a1.getCosto() < a2.getCosto()) {
-					return 1;
-				} else if (a1.getDuracion() > a2.getDuracion()) {
-					return -1;
-				} else if (a1.getDuracion() < a2.getDuracion()) {
-					return 1;
-				}
-
-				return 0;
-			}
-		};
 	}
 
 	// Funciones de grabado de archivos
@@ -219,15 +177,15 @@ public class Archivo {
 			printerWriter = new PrintWriter(file);
 			printerWriter.println("Promocion:\n" + promocion.getNombre());
 			printerWriter.print("Atracciones Incluidas: ");
-			
+
 			boolean primerLinea = true;
-			
+
 			printerWriter.print("[");
 			for (Atraccion atraccion : promocion.getAtracciones()) {
-				if (primerLinea){
+				if (primerLinea) {
 					printerWriter.print(atraccion.getNombre());
 					primerLinea = false;
-				}else {
+				} else {
 					printerWriter.print(", " + atraccion.getNombre());
 				}
 			}
@@ -239,7 +197,7 @@ public class Archivo {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void agregarAtraccionEnArchivo(Atraccion atraccion, FileWriter file) {
 		PrintWriter printerWriter = null;
 
@@ -254,6 +212,7 @@ public class Archivo {
 		}
 	}
 
+	// Funciones de Creacion y Cierre de archivo
 	public FileWriter crearArchivo() {
 		FileWriter file = null;
 

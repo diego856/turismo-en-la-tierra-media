@@ -1,5 +1,7 @@
 package clases;
 
+import java.util.Comparator;
+
 public class Atraccion {
 	private String nombre;
 	private double costo;
@@ -31,16 +33,16 @@ public class Atraccion {
 		return this.duracion;
 	}
 
-	public boolean getOfertada() {
-		return this.ofertada;
-	}
-
 	public int getCupo() {
 		return cupo;
 	}
 
 	public String getTipo() {
 		return tipo;
+	}
+
+	public boolean getOfertada() {
+		return this.ofertada;
 	}
 
 	public void setOfertada(boolean ofertada) {
@@ -52,7 +54,27 @@ public class Atraccion {
 		return this.cupo > 0;
 	}
 
-	public void descontarCupo(){
-			this.cupo--;
+	public void descontarCupo() {
+		this.cupo--;
+	}
+
+	static Comparator<Atraccion> getAtraccionComparador() {
+		return new Comparator<Atraccion>() {
+
+			@Override
+			public int compare(Atraccion a1, Atraccion a2) {
+				if (a1.getCosto() > a2.getCosto()) {
+					return -1;
+				} else if (a1.getCosto() < a2.getCosto()) {
+					return 1;
+				} else if (a1.getDuracion() > a2.getDuracion()) {
+					return -1;
+				} else if (a1.getDuracion() < a2.getDuracion()) {
+					return 1;
+				}
+
+				return 0;
+			}
+		};
 	}
 }
