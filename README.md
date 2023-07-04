@@ -23,5 +23,10 @@ TP Paradigmas de Programación 2023 - UNLaM
 ## UML
 - Ubicado dentro de la carpeta Diagrams del proyecto
 
+## Instrucciones de Uso
+- Ejecutar en el IDE favorito, el archivo Main.java que se encuentra dentro de la carpeta src/clases.
+- Luego, la consola mostrara las indicaciones a seguir.
+- Para ver el funcionamiento a modo ejemplo, se facilita un video explicativo en el siguiente punto.
+
 ## Video Explicativo de funcionamiento
 - https://drive.google.com/file/d/1dEWNtdE4hjFgwlM5itYu4V6oEmBmgPbZ/view?usp=sharing
